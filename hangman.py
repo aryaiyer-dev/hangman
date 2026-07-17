@@ -1,12 +1,11 @@
 # This is the Hangman python script
 #Members: Arya Iyer, Ananya Baphna, Elaine Wang, Diana Naida, Rishita Mudradi
-from english_words import get_english_words_set
 import random
 
 
 def initialize_word_bank():
     #Return a list of English words between 4 and 12 letters.
-    words_set = get_english_words_set(["web2"], lower=True)
+    words_set = ("bird","python","cool","zebra","research","institution","purple","happy")
     return [word for word in words_set if 4 <= len(word) <= 12]
 
 
@@ -60,9 +59,7 @@ def play_single_game(word_list):
             print(f"Wrong! You have {lives} lives left.")
 
         print("Word:", " ".join(display))
-        print(f"Lives remaining: {lives}")
         print("Guessed letters:", " ".join(sorted(guessed_letters)))
-        print()
 
     if "_" not in display:
         print("Congratulations! You win!")
